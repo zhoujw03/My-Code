@@ -1,4 +1,4 @@
-package src.Lezione1.utente;
+package Lezione1.poliflix.utente;
 
 public class Utente {
 
@@ -14,6 +14,7 @@ public class Utente {
         password = p;
     }
 
+    // --- GETTER E SETTER (Metodi di accesso controllato agli attributi privati) ---
     // username
     public String getUsername() {
         return username;
@@ -32,7 +33,17 @@ public class Utente {
         this.password = password;
     }
 
+    // Verifica l'uguaglianza delle credenziali tra questo utente e l'altro
+    // È un overload personalizzato del classico metodo equals
     public boolean equals(Utente altro) {
-        return username.equals(altro.username);
+        boolean stessoUsername = this.username.equals(altro.username);
+        boolean stessoPassword = this.password.equals(altro.password);
+        return stessoUsername && stessoPassword; // Ritorna vero solo se coincidono sia username che password
+    }
+
+    // controlla che le credenziali non siano nulle
+    // Utilizzato per verificare se l'utente rappresenta un utente reale o un oggetto "vuoto"
+    public boolean nonNull(){
+        return this.username != null && this.password != null;
     }
 }

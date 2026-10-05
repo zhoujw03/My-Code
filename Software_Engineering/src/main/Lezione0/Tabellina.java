@@ -1,4 +1,4 @@
-package src.Lezione0;
+package Lezione0;
 
 //写乘法口诀表
 public class Tabellina {
